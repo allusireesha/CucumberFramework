@@ -12,7 +12,7 @@ public class HomePage extends BasePage{
 		
 	
 
-	addObject("usermenu", By.id("userNavButton"));
+	addObject("usermenu", By.id("userNavLabel"));
 	addObject("usermenudropdown", By.id("userNav-menuItems"));
 	addObject("title", By.id("userNavLabel"));
 	
@@ -25,7 +25,7 @@ public class HomePage extends BasePage{
 	addObject("home", By.xpath("//a[text()=\"Home\"]"));
 	
 	
-	//addObject("opportunities", By.id("Opportunity_Tab"));
+	addObject("opportunitiestab", By.id("Opportunity_Tab"));
 	//addObject("opportunities", By.xpath("//a[@title='Opportunities Tab']"));//Opportunity_Tab
 	addObject("contacts", By.xpath("//a[@title='Contacts Tab']"));
 	

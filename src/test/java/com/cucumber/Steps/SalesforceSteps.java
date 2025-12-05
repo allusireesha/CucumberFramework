@@ -1,5 +1,7 @@
 package com.cucumber.Steps;
 
+import java.util.List;
+
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -7,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import com.cucumber.Base.BasePage;
 import com.cucumber.Base.BaseTest;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.After;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
@@ -118,7 +121,7 @@ public void enter_into_text_box(String elementName, String inputData) {
 }
 @Then("select from dropdown {string} {string}")
 public void select_from_dropdown(String elementName, String inputData) {
-    page.enterintoTextBox(elementName, inputData);
+    page.selectFromDropdown(elementName, inputData);
 }
 @Then("enter into textbox {string} {string}")
 public void enter_into_textbox(String elementName, String inputData) {
@@ -128,6 +131,11 @@ public void enter_into_textbox(String elementName, String inputData) {
 public void verify_new_opportunitypage_is_created() {
     page.verifytext(null, null);
 }
+@Then("verify page is displayed {string}")
+public void verify_page_is_displayed(String pagename) {
+    page.verifyPageIsDisplayed(pagename);
+}
+
 
 
 
@@ -150,11 +158,27 @@ public void verify_the_home_tab_selected(String elementName, String inputData) {
     page.verifydata(elementName, inputData);
 }
 
-@Then("verify the usermenu options\"usermanu\" {string}")
-public void verify_the_usermenu_options_usermanu(String elementName) {
-    page.getDropdownvalues(elementName);
-   
+
+
+
+
+@Then("user verify new window is opened {string}")
+public void user_verify_new_window_is_opened(String elementName) {
+   page.verifttitle(driver);
 }
+@When("user close the window {string}")
+public void user_close_the_window(String elementName) {
+    page.closeCurrentWindow();
+}
+@Then("user back to main window")
+public void user_back_to_main_window() {
+    page.switchToMainWindow();
+}
+
+
+
+
+
 
 
 

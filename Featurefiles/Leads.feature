@@ -5,16 +5,17 @@ Given User launch the application
 
 @tc20
 Scenario: TC20-leadtab
-Given User is on  "LeadsPage"
-When user click on the Tab "leads"
+Given User is on "LeadsPage"
+When user click on the Tab "leadstab"
 Then Leads home page should be displayed
-
+#20done
 @tc21
 Scenario: TC21-Leads Select View
-When user click on the Tab "leads"
+Given User is on "LeadsPage"
+When user click on the Tab "leadstab"
 Then Leads home page should be displayed
-And user clicks on the leads dropdown
-Then the leads dropdown should show the following values:
+Then user click on dropdown "viewdropdown"
+Then pdown contains the following values:
       | All Open Leads          |
       | My Unread Leads         |
       | Recently Viewed Leads   |

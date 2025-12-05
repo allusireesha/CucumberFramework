@@ -8,9 +8,9 @@ import io.cucumber.junit.CucumberOptions;
 
 @CucumberOptions(
 		
-		features= {"C:\\Workspace\\CucumberFramework\\Featurefiles\\UserMenu.feature"},
+		features= {"C:\\Workspace\\CucumberFramework\\Featurefiles\\Accounts.feature"},
 		glue= {"com.cucumber.Steps"},
-		tags="@tc05",
+		tags="@tc12",
 		plugin= {"pretty","html:target/cucumber-reports/cucumber.html",
 				"json:target/cucumber-reports/cucumber.json"}
 		

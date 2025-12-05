@@ -9,16 +9,25 @@ public class AccountsPage extends BasePage{
 
 	public AccountsPage(WebDriver driver) {
 		super(driver);
+		 
+		 addObject("newaccount",By.xpath("//h2[text()=\"New Account\"]"));
+		addObject("title",By.xpath("//h1[text()=\"Accounts\"]"));
 		addObject("accountstab", By.xpath("//a[@title='Accounts Tab']"));
 		 addObject("newbutton", By.name("new"));
 		 addObject("accountname", By.id("acc2"));
 		 addObject("accounttypedropdown", By.id("acc6"));
 		 addObject("customerprioritydropdown", By.id("00Ng5000000HQm6"));
-		 addObject("save", By.name("save"));
+		 addObject("save", By.xpath("(//input[@title=\"Save\"])[1]"));
+		 addObject("save", By.xpath("(//input[@title=\"Save\"])[1]"));
+		 
 		//edit view elements
+		
+		 addObject("createnewview", By.xpath("//a[text()=\"Create New View\"]"));
 		 addObject("Viewdropdown", By.id("fcf"));
 		 addObject("Edit", By.xpath("//a[text()='Edit']"));
 		 addObject("ViewName", By.id("fname"));
+		 
+		 addObject("uniquename", By.id("devname"));
 		 addObject("FilterFieldropdown", By.id("fcol1"));
 		 addObject("Operatordropdown", By.id("fop1"));
 		 addObject("Value", By.id("fval1"));

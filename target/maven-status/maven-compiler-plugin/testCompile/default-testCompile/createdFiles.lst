@@ -1,4 +1,8 @@
-com\cucumber\Pages\Home.class
-com\cucumber\Pages\LoginPage.class
-com\cucumber\Pages\Login.class
-com\cucumber\Steps\Steps.class
+com\cucumber\Pages\HomePage.class
+com\cucumber\Pages\SFloginpage.class
+com\cucumber\Pages\LeadsPage.class
+com\cucumber\Steps\SalesforceSteps.class
+com\cucumber\Pages\AccountsPage.class
+com\cucumber\Runner\Runner.class
+com\cucumber\Pages\ContactsPage.class
+com\cucumber\Pages\OpportunityPage.class

@@ -9,7 +9,7 @@ public class OpportunityPage extends BasePage {
 
 	public OpportunityPage(WebDriver driver) {
 		super(driver);
-		addObject("opportunities", By.id("Opportunity_Tab"));
+		addObject("opportunitiestab", By.id("Opportunity_Tab"));
 		//addObject("opportunities", By.xpath("//a[@title='Opportunities Tab']"));//Opportunity_Tab
 		 //addObject("opportunities",By.xpath("//a[@title='Opportunities Tab']"));
 		// addObject("opportunities", By.xpath("//a[contains(text(),'Opportunities')]"));

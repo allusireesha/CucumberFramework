@@ -9,7 +9,7 @@ public class LeadsPage extends BasePage{
 
 	public LeadsPage(WebDriver driver) {
 		super(driver);
-		addObject("leads", By.xpath("//a[@title='Leads Tab']"));
+		addObject("leadstab", By.xpath("//a[@title='Leads Tab']"));
 		//addObject("leads", By.xpath("//a[text()='Leads']"));
 		//addObject("leads", By.xpath("//a[@title='Leads Tab']"));
 		 //addObject("leads", By.id("Lead_Tab"));

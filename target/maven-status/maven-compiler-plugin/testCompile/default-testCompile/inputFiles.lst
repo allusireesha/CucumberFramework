@@ -1,5 +1,8 @@
-C:\Workspace\CucumberFramework\src\test\java\com\cucumber\Pages\Home.java
-C:\Workspace\CucumberFramework\src\test\java\com\cucumber\Pages\Login.java
-C:\Workspace\CucumberFramework\src\test\java\com\cucumber\Pages\LoginPage.java
+C:\Workspace\CucumberFramework\src\test\java\com\cucumber\Pages\AccountsPage.java
+C:\Workspace\CucumberFramework\src\test\java\com\cucumber\Pages\ContactsPage.java
+C:\Workspace\CucumberFramework\src\test\java\com\cucumber\Pages\HomePage.java
+C:\Workspace\CucumberFramework\src\test\java\com\cucumber\Pages\LeadsPage.java
+C:\Workspace\CucumberFramework\src\test\java\com\cucumber\Pages\OpportunityPage.java
+C:\Workspace\CucumberFramework\src\test\java\com\cucumber\Pages\SFloginpage.java
 C:\Workspace\CucumberFramework\src\test\java\com\cucumber\Runner\Runner.java
-C:\Workspace\CucumberFramework\src\test\java\com\cucumber\Steps\Steps.java
+C:\Workspace\CucumberFramework\src\test\java\com\cucumber\Steps\SalesforceSteps.java

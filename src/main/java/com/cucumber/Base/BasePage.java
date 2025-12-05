@@ -10,6 +10,7 @@ import java.util.Properties;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -38,6 +39,7 @@ public class BasePage {
 	
 		
 		By by=ObjectRepo.get(elementName);
+		WaitforElementlocatedby(by);
 		WebElement element=driver.findElement(by);
 		return element;
 		
@@ -62,9 +64,15 @@ public class BasePage {
 		WaitforElement(element);
 		element.click();
 	}
-	void WaitforElement(WebElement element) {
+	void WaitforElementlocatedby(By by) {
+		WebDriverWait wait=new WebDriverWait(driver,20);
+		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(by));
+		
+	}
+	void  WaitforElement(WebElement element) {
 		WebDriverWait wait=new WebDriverWait(driver,20);
 		wait.until(ExpectedConditions.visibilityOf(element));
+		
 		
 	}
 	public void EnterOtp(String elementName) throws Exception  {
@@ -87,14 +95,18 @@ public class BasePage {
 		WaitforElement(element);
 		element.click();
 	}
-	public void selectdropdown(String dropdownElement,String optionElement) {
+	/*public void selectdropdown(String dropdownElement,String valuetoSelect) {
+		
 		WebElement dropdown=getElement(dropdownElement);
+		WaitforElement(dropdown);
+		 Actions actions = new Actions(driver);
+		    actions.moveToElement(dropdown).perform();
 		dropdown.click();
 		
-		WebElement option=getElement(optionElement);
+		WebElement option=getElement(valuetoSelect);
 		WaitforElement(option);
 		option.click();
-	}
+	}*/
 	public void clickonLink(String elementName) {
 		WebElement element=getElement(elementName);
 		WaitforElement(element);
@@ -152,10 +164,16 @@ public class BasePage {
 		}
 		
 	}
-	public void selectFromDropdown(String dropdownName, String visibleText) {
-        WebElement element = getElement(dropdownName);
-        Select select = new Select(element);
-        select.selectByVisibleText(visibleText);
+	public void selectFromDropdown(String elementName, String value) {
+		Select dropdown = new Select(getElement(elementName));
+		for(WebElement option  :dropdown.getOptions()) {
+			if(option.getText().equalsIgnoreCase(value)) {
+				dropdown.selectByVisibleText(option.getText());
+				break;
+			}
+		}
+		
+        
     }
 	
 	public List<String> getDropdownvalues(String elementName) {
@@ -170,25 +188,27 @@ public class BasePage {
     }
 	public void verifyDropdownValues(String elementName, List<String> expectedvalues) {
         WebElement dropdownElement = getElement(elementName);
-        Select select = new Select(dropdownElement);
+        
 
-        List<WebElement> allOptions = select.getOptions();
+        List<WebElement> allOptions = dropdownElement.findElements(By.tagName("a"));
+
+        
         List<String> actuallist = new ArrayList<>();
 
         for (WebElement option : allOptions) {
             actuallist.add(option.getText().trim());
         }
-        Assert.assertEquals(actuallist, expectedvalues);
+        Assert.assertEquals(expectedvalues, actuallist);
         
        
     }
 	
 	
-	public void clickonDropdown(String elementName) {
+	/*public void clickonDropdown(String elementName) {
 		WebElement element=getElement(elementName);
 		WaitforElement(element);
 		element.click();
-	}
+	}*/
 	public void clickonLogout(String elementName) {
 		WebElement element=getElement(elementName);
 		WaitforElement(element);
@@ -211,6 +231,16 @@ public class BasePage {
 		String expected=inputData;
 		String actualvalue=getElement(elementName).getText();
 		Assert.assertEquals(actualvalue, inputData);
+	}
+	public void verifyPageIsDisplayed(String elementName) {
+	    WebElement element = getElement(elementName);
+	    WaitforElement(element);
+
+	    if (!element.isDisplayed()) {
+	        throw new AssertionError("Page NOT displayed. Element not found: " + elementName);
+	    }
+
+	    System.out.println("Page is displayed. Verified by element: " + elementName);
 	}
 	
 }
